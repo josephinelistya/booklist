@@ -1,0 +1,41 @@
+{% extends "booklist_register/base.html"%}
+
+{% block content %}
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Title</td>
+            <td>Author</td>
+            <td>Type of Book</td>
+            <td>Pages</td>
+            <td>Published Date</td>
+                <a href="{% url 'booklist_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Add New
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booklist in booklist_list %}
+            <tr>
+                <td>{{booklist.title}}</td>
+                <td>{{booklist.author}}</td>
+                <td>{{booklist.booktype}}</td>
+                <td>{{booklist.pages}}</td>
+                <td>{{booklist.publishdate}}</td>
+                <td>
+                    <a href="{% url 'booklist_update' booklist.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <form action="{% url 'booklist_delete' booklist.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends "booklist_register/base.html"%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form.title|as_crispy_field}}
+    {{form.author|as_crispy_field}}
+
+    <div class="row">
+        <div class=col-md-4>
+            {{form.booktype|as_crispy_field}}
+        </div>
+
+        <div class=col-md-4>
+            {{form.pages|as_crispy_field}}
+        </div>
+        <div class=col-md-4>
+            {{form.publishdate|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>    Submit</button>
+        </div>
+        <div class="col md-4">
+            <a href="{% url 'booklist_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Back to List
+            </a>
+        </div>
+    </div>
+    <p>Note: Published date with wrong format will not be saved</p>
+</form>
+{% endblock content %}
