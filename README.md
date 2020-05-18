@@ -10,9 +10,9 @@ python -m pip install Django
 ```
 - Download or clone the repository.
 - Open with source code editor (I use VS Code).
-- Download postgreSQL.
-- Create a database named BooklistDB on pgAdmin. You can check the database name on settings.py
-- On setting.py, you may need to change the DATABASE details such as user and password based on your postgreSQL.
+- Download PostgreSQL.
+- Create a database named BooklistDB on pgAdmin on PostgreSQL. You can check the database name on settings.py
+- On settings.py, you may need to change the DATABASE details such as user and password based on your postgreSQL.
 - Connect the project and database. On VS Code terminal, type: 
 ```python
 python manage.py sqlmigrate booklist_register 0001
