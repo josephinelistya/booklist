@@ -7,14 +7,15 @@ In computer programming, create, read, update, and delete (CRUD) are the four ba
 - Download Django and install it on command prompt by typing: python -m pip install Django
 - Download or clone the repository.
 - Open with source code editor (I use VS Code).
-- You need to make migration by typing: 
-```python
-python manage.py makemigrations booklist_register
-```
 - Create a database named BooklistDB (I use postgreSQL). You can check the database name on settings.py
+- On setting.py, you may need to change the DATABASE details such as user and password based on your postgreSQL.
 - Connect the project and database. On source code editor terminal, type: 
 ```python
 python manage.py sqlmigrate booklist_register 0001
+```
+- You need to make migration by typing: 
+```python
+python manage.py makemigrations booklist_register
 ```
 - You need to migrate by typing: python manage.py migrate
 ```python
