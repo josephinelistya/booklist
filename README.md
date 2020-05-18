@@ -23,7 +23,6 @@ python manage.py makemigrations booklist_register
 python manage.py migrate
 ```
 - You need to add any booktype(s) on database table and run the SQL code. If you are using postgreSQL, open the pgAdmin, go to Tables and booklist_register_booktype.
--
 - You may need to install crispy form and psycopg2 by typing: 
 ```python
 pip install django-crispy-forms
