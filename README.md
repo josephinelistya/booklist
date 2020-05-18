@@ -4,7 +4,10 @@ In computer programming, create, read, update, and delete (CRUD) are the four ba
 
 ## HOW TO RUN THE WEB APP
 
-- Download Django and install it on command prompt by typing: python -m pip install Django
+- Download Django and install it on command prompt by typing: 
+```python
+python -m pip install Django
+```
 - Download or clone the repository.
 - Open with source code editor (I use VS Code).
 - Download postgreSQL.
